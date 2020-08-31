@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>makemagic</name>
+    </assembly>
+    <members>
+        <member name="T:makemagic.Controllers.CharactersController">
+            <summary>
+            Character operations
+            </summary>
+        </member>
+        <member name="M:makemagic.Controllers.CharactersController.#ctor(makemagic.Data.ICharacterRepository,AutoMapper.IMapper)">
+            <summary>
+            Initializing the CharacterController class
+            </summary>
+            <param name="repository">Injected repository</param>
+            <param name="mapper">Injected mapper</param>
+        </member>
+        <member name="M:makemagic.Controllers.CharactersController.GetAll(System.String)">
+            <summary>
+            Get all Characters
+            </summary>
+            <param name="house">To filter Characters by house</param>
+            <response code="200">The Characters list was successfully retrieved</response>
+            <response code="500">An error occurred while trying to retrieve the Characters list</response>
+            <returns>List of Characters</returns>
+        </member>
+        <member name="M:makemagic.Controllers.CharactersController.GetById(System.Int32)">
+            <summary>
+            Get a Character
+            </summary>
+            <param name="id">The ID of the Character</param>
+            <response code="200">The Character was successfully retrieved</response>
+            <response code="404">A character was not found for the given ID</response>
+            <response code="500">An error occurred while trying to retrieve the Character</response>
+            <returns>Character</returns>
+        </member>
+        <member name="M:makemagic.Controllers.CharactersController.Post(Microsoft.AspNetCore.Mvc.ApiVersion,makemagic.Dtos.CharacterCreateDto)">
+            <summary>
+            To create a Character
+            </summary>
+            <param name="apiVersion">The API version</param>
+            <param name="modeCreatelDto">The Character data</param>
+            <response code="201">The Character was successfully created</response>
+            <response code="400">Model validation error</response>
+            <response code="500">An error occurred while trying to retrieve the Character</response>
+            <returns>The updated Character</returns>
+        </member>
+        <member name="M:makemagic.Controllers.CharactersController.Put(makemagic.Dtos.CharacterUpdateDto,System.Int32)">
+            <summary>
+            To update Character
+            </summary>
+            <param name="modelUpdateDto">The Character's updated data</param>
+            <param name="id">The Character's ID</param>
+            <response code="204">The Character was successfully updated</response>
+            <response code="400">Model validation error</response>
+            <response code="404">A character was not found for the given ID</response>
+            <response code="500">An error occurred while trying to retrieve the Character</response>
+        </member>
+        <member name="M:makemagic.Controllers.CharactersController.Delete(System.Int32)">
+            <summary>
+            To delete a Character
+            </summary>
+            <param name="id">The Character's ID</param>
+            <response code="204">The Character was successfully deleted</response>
+            <response code="404">A character was not found for the given ID</response>
+            <response code="500">An error occurred while trying to retrieve the Character</response>
+        </member>
+        <member name="T:makemagic.Settings">
+            <summary>
+            Settings to access PotterAPI
+            </summary>
+        </member>
+        <member name="F:makemagic.Settings.Secret">
+            <summary>
+            API token to access the PotterAPI
+            </summary>
+        </member>
+        <member name="T:makemagic.Utils.PotterApi">
+            <summary>
+            Accessing the external PotterAPI
+            </summary>
+        </member>
+        <member name="M:makemagic.Utils.PotterApi.#ctor">
+            <summary>
+            Initializing the PotterApi object
+            </summary>
+        </member>
+        <member name="M:makemagic.Utils.PotterApi.AccioHouse(System.String)">
+            <summary>
+            To verify if the given house exists into PotterAPI repository
+            </summary>
+            <param name="houseId">The ID of the House</param>
+            <returns>True: if the House exists; False: if the House doesn't exists or if could not connect to the PotterAPI</returns>
+        </member>
+        <member name="T:makemagic.Utils.House">
+            <summary>
+            Model class to store the House ID
+            </summary>
+        </member>
+    </members>
+</doc>
