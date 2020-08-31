@@ -1,6 +1,7 @@
 # makemagic
 <b>ASP.NET Core 3.1 CRUD application</b> for Harry Potter characters.
-It is integrated with this <a href="https://www.potterapi.com" rel="nofollow">API</a> to check if the house really exists.
+<p>It is integrated with this <a href="https://www.potterapi.com" rel="nofollow">API</a> to check if the house really exists.</p>
+<p>The project is using Entity Framework InMemmory Database. For production environment configure some better Database.
 
 This is an example of json acceptable:
 <pre><code>{
@@ -22,4 +23,8 @@ This is an example of json acceptable:
 <li><b>Delete a single character:</b> DELETE api/v1.0/characters/{id}</li>
 </ul>
 
+<h2>Configurations</h2>
 
+<ul>
+<li><b>PotterAPI key:</b> Put your api key into the file <code>Settings.cs -> Secret = "PASTE YOUR POTTERAPI KEY HERE";</code></li>
+</ul>
